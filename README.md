@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/MiNKS-HR/upcoming-availability-service
+  - https://github.com/MiNKS-HR/ilias-similar-listings-service
+  - https://github.com/MiNKS-HR/details-service
+  - https://github.com/MiNKS-HR/photo-gallery
 
 ## Table of Contents
 

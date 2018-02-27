@@ -1,35 +1,57 @@
 //mongoDB interface
 const mongo = require('mongoose');
+const _ = require('lodash');
 
-const endpoint = 'mongodb://127.0.0.1/reviews';
+const mongoURI = process.env.DATABASE || 'mongodb://127.0.0.1/reviews'; 
 
-mongo.connect(endpoint);
+mongo.connect(mongoURI);
+// mongo.connection.on('error', (err) => {
+//   if (err.message.code === 'ETIMEDOUT') {
+//     console.log('caught connection timeout');
+//     console.log(err);
+//     mongoose.connect(mongoURI);
+//   }
+//   console.log('caught connection err');
+//   console.log(err);
+// });
+// mongo.connection.once('open', () => {
+//   console.log(`Mongoose successfully connected to ${mongoURI}`);
+// });
 
+
+const reviewAttributeSchema = {
+  userImg: String,
+  user: String,
+  date: String,
+  comment: String
+};
 
 const reviewSchema = {
   id: Number,
   numberOfReviews: Number,
   averageRating: Number,
-  rating-accuracyDesc: Number,
-  rating-communication: Number,
-  rating-cleanliness: Number,
-  rating-location: Number,
-  rating-CheckIn: Number,
-  rating-Value: Number,
-  reviews: [Object]
+  ratingAccuracyDesc: Number,
+  ratingCommunication: Number,
+  ratingCleanliness: Number,
+  ratingLocation: Number,
+  ratingCheckIn: Number,
+  ratingValue: Number,
+  reviews: [reviewAttributeSchema]
 };
 
-const reviewAttribues = {
-  user-img: 'string',
+const reviewAttributes = {
+  userImg: 'string',
   user: 'string',
   date: 'string',
   comment: 'string'
 };
 
-let validateReview = (review) {
-  for (key in reviewAttribues) {
-    if (typeof review[key] !== reviewAttribues[key]) {
-      if (reviewAttribues[key].regx && !review[key].match(reviewAttribues[key].regx)) {
+
+
+let validateReview = (review) => {
+  for (key in reviewAttributes) {
+    if (typeof review[key] !== reviewAttributes[key]) {
+      if (reviewAttributes[key].regx && !review[key].match(reviewAttributes[key].regx)) {
         return false;
       }
     }
@@ -37,13 +59,14 @@ let validateReview = (review) {
   return true;
 };
 
-let Review = mongoose.model('Review', reviewSchema);
+let Review = mongo.model('Review', reviewSchema);
 
 let filterValidReviews = (reviews) => {
   return _.filter(reviews, validateReview);
 };
 
-const saveExperience = (experienceObj) => {
+const saveExperience = (experienceObj, callback) => {
+  console.log('saving experience');
   experienceObj.reviews = filterValidReviews(experienceObj.reviews);
   review = new Review(experienceObj);
   review.save((err) => {
@@ -73,6 +96,17 @@ const getAllReviews = (id, callback) => {
   });
 }
 
-module.export.saveReview = saveReview;
-module.export.saveExperience = saveExperience;
-module.export.getAllReviews = getAllReviews;
+const disconnect = (callback) => {
+  mongo.disconnect((err, success) => {
+    if (err) {
+      callback(err)
+    } else {
+      callback(null, sucess);
+    }
+  });
+}
+
+module.exports.saveReview = saveReview;
+module.exports.saveExperience = saveExperience;
+module.exports.getAllReviews = getAllReviews;
+module.exports.disconnect = disconnect;

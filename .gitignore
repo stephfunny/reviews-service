@@ -1,3 +1,5 @@
 devDocs
 
 node_modules/
+
+client/public/index.test.html

@@ -23,7 +23,9 @@ describe('Database Interface', () => {
     memMongo = await new MongoDBMemoryServer.MongoMemoryServer();
     process.env.DATABASE = await memMongo.getConnectionString();
     //console.log('test connecting');
-    await dbInterface.connect().catch((err) => (console.log('connection failed', err)));
+    await dbInterface.connect()
+    .then(() => (console.log('connected to db:', process.env.DATABASE)))
+    .catch((err) => (console.log('connection failed', err)));
     mockData = testData.slice();
   });
 
@@ -37,7 +39,7 @@ describe('Database Interface', () => {
 
   //add an experience
   test('It should add experiences to the db', async () => {
-
+    console.log('mockdata[0]', mockData[0]);
     await dbInterface.saveExperience(mockData[0])
     .then((success) => {
       //console.log('success', success);
@@ -56,7 +58,7 @@ describe('Database Interface', () => {
 
     //let matchableMockData = mockData.slice();
     //matchableMockData[0].reviews = null; //expect.arrayContaining(matchableMockData[0].reviews);
-    console.log(mockData[0].reviews);
+    //console.log(mockData[0].reviews);
 
     await dbInterface.saveExperience(mockData[0])
     .then(() => (dbInterface.saveExperience(mockData[1])))

@@ -39,11 +39,12 @@ describe('Database Interface', () => {
 
   //add an experience
   test('It should add experiences to the db', async () => {
+    jest.setTimeout(60000);
     let mockData = require('./mockData.js');
     console.log('mockdata[0]', mockData[0]);
     await dbInterface.saveExperience(mockData[0])
     .then((success) => {
-      //console.log('success', success);
+      console.log('success', success);
       //expect(success.reviews).toMatchObject(mockData[0].reviews);
       delete mockData[0].reviews; //toMatchObject cannot handle list of objects with extra properties
       expect(success).toMatchObject(mockData[0]);

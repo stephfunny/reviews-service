@@ -12,8 +12,8 @@ describe('Database Interface', () => {
 
   beforeAll(async () => {
     jest.setTimeout(60000);
-    let firstMongo = await new MongoDBMemoryServer.MongoMemoryServer();
-    firstMongo.stop();
+    //let firstMongo = await new MongoDBMemoryServer.MongoMemoryServer();
+    //firstMongo.stop();
     //jest.setTimeout(5000);
   });
 

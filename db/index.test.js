@@ -10,6 +10,13 @@ describe('Database Interface', () => {
   let memMongo;
   let mockData;
 
+  beforeAll(async () => {
+    jest.setTimeout(60000);
+    let firstMongo = await new MongoDBMemoryServer.MongoMemoryServer();
+    firstMongo.stop();
+    jest.setTimeout(5000);
+  });
+
 
   beforeEach(async () => {
     //console.log(MongoDBMemoryServer);

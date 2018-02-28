@@ -17,7 +17,7 @@ describe('Database Interface', () => {
     process.env.DATABASE = await memMongo.getConnectionString();
     //console.log('test connecting');
     await dbInterface.connect().catch((err) => (console.log('connection failed', err)));
-    mockData = { ...testData };
+    mockData = testData.slice();
   });
 
   afterEach(async () => {

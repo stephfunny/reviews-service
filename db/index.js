@@ -40,7 +40,7 @@ const reviewAttributes = {
 
 
 let validateReview = (review) => {
-  for (key in reviewAttributes) {
+  for (var key in reviewAttributes) {
     if (typeof review[key] !== reviewAttributes[key]) {
       if (reviewAttributes[key].regx && !review[key].match(reviewAttributes[key].regx)) {
         return false;
@@ -60,7 +60,7 @@ const saveExperience = (experienceObj/*, callback*/) => {
   return new Promise((resolve, reject) => {
     //console.log('saving experience', experienceObj.id);
     experienceObj.reviews = filterValidReviews(experienceObj.reviews);
-    review = new Review(experienceObj);
+    let review = new Review(experienceObj);
     review.save()
     .then((success) => {
       console.log('Saved experience', experienceObj.id, 'with', experienceObj.reviews.length, 'valid reviews');

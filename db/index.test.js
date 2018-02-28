@@ -14,7 +14,7 @@ describe('Database Interface', () => {
     jest.setTimeout(60000);
     let firstMongo = await new MongoDBMemoryServer.MongoMemoryServer();
     firstMongo.stop();
-    jest.setTimeout(5000);
+    //jest.setTimeout(5000);
   });
 
 
@@ -39,7 +39,6 @@ describe('Database Interface', () => {
 
   //add an experience
   test('It should add experiences to the db', async () => {
-    jest.setTimeout(60000);
     let mockData = require('./mockData.js');
     console.log('mockdata[0]', mockData[0]);
     await dbInterface.saveExperience(mockData[0])

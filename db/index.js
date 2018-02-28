@@ -2,21 +2,12 @@
 const mongo = require('mongoose');
 const _ = require('lodash');
 
-const mongoURI = process.env.DATABASE || 'mongodb://127.0.0.1/reviews'; 
-
-mongo.connect(mongoURI);
-// mongo.connection.on('error', (err) => {
-//   if (err.message.code === 'ETIMEDOUT') {
-//     console.log('caught connection timeout');
-//     console.log(err);
-//     mongoose.connect(mongoURI);
-//   }
-//   console.log('caught connection err');
-//   console.log(err);
-// });
-// mongo.connection.once('open', () => {
-//   console.log(`Mongoose successfully connected to ${mongoURI}`);
-// });
+const connect = () => {
+    let mongoURI = process.env.DATABASE || 'mongodb://127.0.0.1/reviews'; 
+    console.log('connecting to', mongoURI);
+    return mongo.connect(mongoURI);
+    
+};
 
 
 const reviewAttributeSchema = {
@@ -65,48 +56,44 @@ let filterValidReviews = (reviews) => {
   return _.filter(reviews, validateReview);
 };
 
-const saveExperience = (experienceObj, callback) => {
-  console.log('saving experience');
-  experienceObj.reviews = filterValidReviews(experienceObj.reviews);
-  review = new Review(experienceObj);
-  review.save((err) => {
-    if (err) {
-      callback(err, false);
-    } else {
-      console.log('Saved experience', experienceObj.id, ':', experienceObj.reviews.length, 'valid reviews');
-      callback(null, true);
-    }
+const saveExperience = (experienceObj/*, callback*/) => {
+  return new Promise((resolve, reject) => {
+    //console.log('saving experience', experienceObj.id);
+    experienceObj.reviews = filterValidReviews(experienceObj.reviews);
+    review = new Review(experienceObj);
+    review.save()
+    .then((success) => {
+      console.log('Saved experience', experienceObj.id, 'with', experienceObj.reviews.length, 'valid reviews');
+      resolve(success);
+      })
+    .catch((err) => {
+      reject(err);
+    });
   });
 }
 
-const saveReview = (id, reviewObj, callback) => {
-  if (validateReview(reviewObj)) {
-  //add a review to an existing experience
-  } else {
-    console.log('ERROR: Review is not in correct format');
-  }
+const saveReview = (id, reviewObj) => {
+  return false;
 };
 
 const getAllReviews = (id, callback) => {
-  mongo.find({id: id}).exec((err, data) => {
-    if (err) {
-      callback(err, null);
-    }
-    callback(null, data);
-  });
+  return Review.findOne({id: id}).exec();
 }
 
-const disconnect = (callback) => {
-  mongo.disconnect((err, success) => {
-    if (err) {
-      callback(err)
-    } else {
-      callback(null, sucess);
-    }
-  });
+const disconnect = () => {
+  return mongo.disconnect();
+
+  //   (err, success) => {
+  //   if (err) {
+  //     callback(err)
+  //   } else {
+  //     callback(null, success);
+  //   }
+  // });
 }
 
 module.exports.saveReview = saveReview;
 module.exports.saveExperience = saveExperience;
 module.exports.getAllReviews = getAllReviews;
+module.exports.connect = connect;
 module.exports.disconnect = disconnect;

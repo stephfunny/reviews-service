@@ -40,10 +40,10 @@ describe('Database Interface', () => {
   //add an experience
   test('It should add experiences to the db', async () => {
     let mockData = require('./mockData.js');
-    console.log('mockdata[0]', mockData[0]);
+    //console.log('mockdata[0]', mockData[0]);
     await dbInterface.saveExperience(mockData[0])
     .then((success) => {
-      console.log('success', success);
+      //console.log('success', success);
       expect(success._id).toBeDefined();
       expect(success.id).toBe(mockData[0].id);
       for (var key in mockData[0]) {

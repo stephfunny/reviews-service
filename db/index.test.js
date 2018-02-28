@@ -45,9 +45,13 @@ describe('Database Interface', () => {
     await dbInterface.saveExperience(mockData[0])
     .then((success) => {
       console.log('success', success);
-      //expect(success.reviews).toMatchObject(mockData[0].reviews);
-      delete mockData[0].reviews; //toMatchObject cannot handle list of objects with extra properties
-      expect(success).toMatchObject(mockData[0]);
+      expect(success._id).toBeDefined();
+      expect(success.id).toBe(mockData[0].id);
+      for (var key in mockData[0]) {
+        expect(success[key]).toBeDefined();
+      }
+      //delete mockData[0].reviews; //toMatchObject cannot handle list of objects with extra properties
+      //expect(success).toMatchObject(mockData[0]);
     })
     .catch((err) => {
       throw err;

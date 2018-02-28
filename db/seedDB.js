@@ -4,10 +4,11 @@ const db = require('./index.js');
 
 
 for (var i = 0; i < data.length; i++) {
-  db.saveExperience(data[i], (err, success) => {
-    if (err) {
-      throw err;
-    }
-  });
+  async () => {
+    await db.saveExperience(data[i])
+    .catch((err) => (throw err));
+  }
 }
 
+db.disconnect()
+.catch((err) => (throw err));

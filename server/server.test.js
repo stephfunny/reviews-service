@@ -31,12 +31,10 @@ describe('Express Server Endpoints', () => {
       </html>`;
 
     
-    fs.writeFile(testFilePath, testHTML, (err) => {
-      if (err) throw err;
-      console.log('The test file could not be created in ');
-    });
+    await fs.writeFileSync(testFilePath, testHTML);
     const staticResponse = await supertest(serverApp).get('/content/index.test.html');
     //const expectedResponse = fs.readFileSync(testFilePath, 'utf8');
+    console.log(staticResponse);
     expect(staticResponse.statusCode).toBe(200);
     expect(staticResponse.text).toEqual(testHTML);//expectedResponse);
   })

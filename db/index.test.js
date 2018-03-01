@@ -1,5 +1,4 @@
 //unit test for mongoDB interface
-const mongoose = require('mongoose');
 const MongoDBMemoryServer = require('mongodb-memory-server');
 const testData = require('./mockData.js');
 

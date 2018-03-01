@@ -34,7 +34,7 @@ describe('Express Server Endpoints', () => {
     await fs.writeFileSync(testFilePath, testHTML);
     const staticResponse = await supertest(serverApp).get('/content/index.test.html');
     //const expectedResponse = fs.readFileSync(testFilePath, 'utf8');
-    console.log(staticResponse);
+    //console.log(staticResponse);
     expect(staticResponse.statusCode).toBe(200);
     expect(staticResponse.text).toEqual(testHTML);//expectedResponse);
   })

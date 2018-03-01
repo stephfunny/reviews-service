@@ -35,13 +35,7 @@
   "jest": {
     "transform": {
       ".*": "<rootDir>/node_modules/babel-jest"
-    },
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/react-dom",
-      "<rootDir>/node_modules/react-addons-test-utils",
-      "<rootDir>/node_modules/fbjs"
-    ]
+    }
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

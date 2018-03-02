@@ -1,14 +1,33 @@
 const reviews = [
   {
     id: 1,
-    numberOfReviews: 3,
     averageRating: 5,
-    ratingAccuracyDesc: 4.3,
-    ratingCommunication: 2.3,
-    ratingCleanliness: 0,
-    ratingLocation: 4.5,
-    ratingCheckIn: 3.0,
-    ratingValue: 3.3,
+    aggregateReviews: [
+      {
+        name: 'Description',
+        rating: 4.3
+      },
+      {
+        name: 'Communication',
+        rating: 2.3
+      },
+      {
+        name: 'Cleanliness',
+        rating: 0
+      },
+      {
+        name: 'Location',
+        rating: 4.0
+      },
+      {
+        name: 'Check In',
+        rating: 5.0
+      },
+      {
+        name: 'Location',
+        rating: 4.4
+      }
+    ],
     reviews: [
       {
         userImg: 'string',
@@ -33,14 +52,33 @@ const reviews = [
 
   {
     id: 2,
-    numberOfReviews: 3,
     averageRating: 5,
-    ratingAccuracyDesc: 4.3,
-    ratingCommunication: 5.0,
-    ratingCleanliness: 0,
-    ratingLocation: 4.5,
-    ratingCheckIn: 3.0,
-    ratingValue: 3.3,
+    aggregateReviews: [
+      {
+        name: 'Description',
+        rating: 4.3
+      },
+      {
+        name: 'Communication',
+        rating: 2.3
+      },
+      {
+        name: 'Cleanliness',
+        rating: 4.3
+      },
+      {
+        name: 'Location',
+        rating: 3.0
+      },
+      {
+        name: 'Check In',
+        rating: 2.3
+      },
+      {
+        name: 'Location',
+        rating: 2.4
+      }
+    ],
     reviews: [
       {
         userImg: 'string',
@@ -65,14 +103,33 @@ const reviews = [
 
   {
     id: 3,
-    numberOfReviews: 3,
     averageRating: 5,
-    ratingAccuracyDesc: 4.3,
-    ratingCommunication: 2.3,
-    ratingCleanliness: 0,
-    ratingLocation: 4.5,
-    ratingCheckIn: 1.0,
-    ratingValue: 3.3,
+    aggregateReviews: [
+      {
+        name: 'Description',
+        rating: 4.3
+      },
+      {
+        name: 'Communication',
+        rating: 2.3
+      },
+      {
+        name: 'Cleanliness',
+        rating: 0
+      },
+      {
+        name: 'Location',
+        rating: 3.0
+      },
+      {
+        name: 'Check In',
+        rating: 3.3
+      },
+      {
+        name: 'Location',
+        rating: 2.4
+      }
+    ],
     reviews: [
       {
         userImg: 'string',

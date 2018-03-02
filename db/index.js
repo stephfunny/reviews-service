@@ -17,9 +17,14 @@ const reviewAttributeSchema = {
   comment: String
 };
 
+const aggregateReviewSchema = {
+  name: String,
+  rating: Number
+};
+
 const reviewSchema = {
   id: Number,
-  numberOfReviews: Number,
+  aggregateReviews: [aggregateReviewSchema],
   averageRating: Number,
   ratingAccuracyDesc: Number,
   ratingCommunication: Number,
@@ -36,7 +41,6 @@ const reviewAttributes = {
   date: 'string',
   comment: 'string'
 };
-
 
 
 let validateReview = (review) => {

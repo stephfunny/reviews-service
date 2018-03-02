@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
 const port = 3001; // process.env.PORT ||
-const app = require('server-app.js');
+const app = require('./server-app.js');
 
 app.use(morgan('dev'));
 

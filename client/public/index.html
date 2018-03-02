@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
 	<title>Revies microservice container</title>
 </head>
 <body>
-  Reviews Microservice Container
+  <div id="itemreviews"></div>
+  <script src="/content/bundle.js"></script>
+  <script>
+  	ReactDOM.render(
+  		React.createElement(Reviews),
+  		document.getElementById('itemreviews')
+  		);
+  </script>
 </body>
 </html>

@@ -14,7 +14,11 @@ export default class Reviews extends React.Component {
       item: null,  //get from props?
       pagesize: 10,
       currentPage: 0,
-      reviews: ['a', 'b', 'c'],
+      reviews: [{
+        username:'jill',
+        date:'Feb 2013',
+        comment:'it was awesome!'
+      }, 'b', 'c'],
       filterTerms: null,
       overallRating: 4,
       aggregateReviews: [{
@@ -68,7 +72,9 @@ export default class Reviews extends React.Component {
   render() {
     return (
       <div id="reviews">
+        <div>
         <ReviewsHeader overallRating={this.state.overallRating} reviews={this.state.reviews.length} searchTerms={this.state.filterTerms} />
+        </div>
         <div>
           <ReviewAggregates aggregateReviews={this.state.aggregateReviews} />
           <ReviewList reviews={this.paginatedReviews()} />

@@ -17,8 +17,68 @@ export default class Reviews extends React.Component {
       reviews: [{
         username:'jill',
         date:'Feb 2013',
+        comment:'it was awesome! super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain.  '
+      },
+      {
+        username:'jill',
+        date:'Feb 2013',
         comment:'it was awesome!'
-      }, 'b', 'c'],
+      },
+      {
+        username:'jill',
+        date:'Feb 2013',
+        comment:'it was awesome!'
+      },
+      {
+        username:'jill',
+        date:'Feb 2013',
+        comment:'it was awesome!'
+      },
+      {
+        username:'jill',
+        date:'Feb 2013',
+        comment:'it was awesome!'
+      },
+      {
+        username:'jill',
+        date:'Feb 2013',
+        comment:'it was awesome!'
+      },
+      {
+        username:'jill',
+        date:'Feb 2013',
+        comment:'it was awesome!'
+      },
+      {
+        username:'jill',
+        date:'Feb 2013',
+        comment:'it was awesome!'
+      },
+      {
+        username:'jill',
+        date:'Feb 2013',
+        comment:'it was awesome!'
+      },
+      {
+        username:'jill',
+        date:'Feb 2013',
+        comment:'it was awesome!'
+      },
+      {
+        username:'jill',
+        date:'Feb 2013',
+        comment:'it was awesome!'
+      },
+      {
+        username:'jill',
+        date:'Feb 2013',
+        comment:'it was awesome!'
+      },
+      {
+        username:'jill',
+        date:'Feb 2013',
+        comment:'it was awesome!'
+      }],
       filterTerms: null,
       overallRating: 4,
       aggregateReviews: [{

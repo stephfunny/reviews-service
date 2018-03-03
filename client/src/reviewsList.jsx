@@ -1,4 +1,6 @@
 import React from 'react';
+import ReviewListEntry from './reviewListEntry.jsx';
+import _ from 'lodash';
 
 export default class ReviewsList extends React.Component {
   constructor() {
@@ -12,9 +14,8 @@ export default class ReviewsList extends React.Component {
 
     return (
       <div id="reviewlist">
-            Jan said it was awesome!
-            Joe said it was fun.
-          </div>
-      );
+            {_.map(this.props.reviews, (review, i) => (<ReviewListEntry review={review} key={i} />))}
+      </div>
+    );
   }
 }

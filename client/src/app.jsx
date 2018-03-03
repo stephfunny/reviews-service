@@ -17,7 +17,14 @@ export default class Reviews extends React.Component {
       reviews: ['a', 'b', 'c'],
       filterTerms: null,
       overallRating: 4,
-      aggregateReviews: {} //will store variable types and render dynamically
+      aggregateReviews: [{
+        name: 'Cleanliness',
+        rating: 5
+      },
+      {
+        name: 'Location',
+        rating: 3.4
+      }] //will store variable types and render dynamically
     };
 
     this.changePage = this.changePage.bind(this);
@@ -63,7 +70,7 @@ export default class Reviews extends React.Component {
       <div id="reviews">
         <ReviewsHeader overallRating={this.state.overallRating} reviews={this.state.reviews.length} searchTerms={this.state.filterTerms} />
         <div>
-          <ReviewAggregates aggregatReviews={this.state.aggregateReviews} />
+          <ReviewAggregates aggregateReviews={this.state.aggregateReviews} />
           <ReviewList reviews={this.paginatedReviews()} />
         </div>
        {this.shouldPaginateReviews() ? <ReviewListPages currentPage={this.state.currentPage} pages={this.state.reviews.length} chage-page={this.changePage} /> : null}

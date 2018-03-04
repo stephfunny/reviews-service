@@ -3,8 +3,8 @@ import ReviewListEntry from './reviewListEntry.jsx';
 import _ from 'lodash';
 
 export default class ReviewsList extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
   }
 
@@ -14,7 +14,7 @@ export default class ReviewsList extends React.Component {
 
     return (
       <div id="reviewlist">
-            {_.map(this.props.reviews, (review, i) => (<ReviewListEntry review={review} key={i} />))}
+            {_.map(this.props.reviews, (review, i) => (<ReviewListEntry review={review} key={review._id} />))}
       </div>
     );
   }

@@ -37,7 +37,9 @@ export default class ReviewListPages extends React.Component {
       for(var i = 1; i < this.props.pages && i < 3; i++) {
         buttons.push(this.pageButton(''+ (i + 1), i, i === this.props.currentPage));
       }
-      buttons.push('...');
+      if (this.props.pages > 4) {
+        buttons.push('...');
+      }
     }
 
     else if (this.props.currentPage < 4) {
@@ -74,9 +76,11 @@ export default class ReviewListPages extends React.Component {
     }
 
     //always last page
-    buttons.push(this.pageButton(this.props.pages, this.props.pages, this.props.pages === this.props.currentPage));
+    if (this.props.pages > 3) {
+      buttons.push(this.pageButton(this.props.pages, this.props.pages, this.props.pages === this.props.currentPage));
+    }
 
-    if (this.props.currentPage < this.props.pages - 1) {
+    if (this.props.currentPage < this.props.pages - 1  && this.props.pages > 2) {
       //forward button
       buttons.push(this.pageButton("next",this.props.currentPage + 1));
     }

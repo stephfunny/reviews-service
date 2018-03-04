@@ -14,7 +14,7 @@ export default class ReviewListPages extends React.Component {
 
   pageButton(content, destination, selected) {
     return (
-      <button className={"page-change button " + selected ? 'selected' : null} onClick={this.props.changePage.bind(destination)} >{content}</button >
+      <button className={selected === true ? 'page-change button selected' : 'page-change button'} onClick={this.props.changePage.bind(destination)} >{content}</button >
     );
   }
   

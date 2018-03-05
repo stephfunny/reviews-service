@@ -23,6 +23,10 @@ app.use('/:id/reviews', (req, res) => {
   db.getAllReviews(req.params.id)
   .then((reviews) => {
     console.log(reviews);
+    if (reviews === null) {
+      res.status(500);
+      res.end();
+    }
     res.json(reviews);
   })
   .catch((err) => {

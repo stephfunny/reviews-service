@@ -27,7 +27,7 @@ export default class StarScale extends React.Component {
 
     return (
       <div style={{width:this.props.width || "100px",height: this.props.height || "20px"}}>
-        {this.Stars()}
+        <span>{this.Stars()}</span>
       </div>
       );
   }

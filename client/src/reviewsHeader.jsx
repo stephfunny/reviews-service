@@ -13,10 +13,23 @@ export default class ReviewHeader extends React.Component {
   render () {
 
     return (
-      <div id="reviews header">
-          {this.props.reviews} REVIEWS
-          <StarScale rating={this.props.overallRating} height="30px" width="120px" />
-          <SearchBox text={this.props.searchTerms} submitQuery={this.props.submitQuery} />
+      <div>
+        <div id="reviews header">
+          <div>
+            <h4>
+              <span>
+                <span>{this.props.reviews} Reviews</span>
+              </span>
+              <StarScale rating={this.props.overallRating} height="30px" width="120px" />
+            </h4>
+          </div>
+            <SearchBox text={this.props.searchTerms} submitQuery={this.props.submitQuery} searchTerms={this.props.searchTerms} />
+        </div>
+        <div style={{marginTop:'16px', marginBottom:'16px'}} >
+          <div className="divider">
+            <hr/>
+          </div>
+        </div>
       </div>
       );
   }

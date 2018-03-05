@@ -1,8 +1,8 @@
 import React from 'react';
 
 export default class searchBox extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
   }
 
@@ -10,9 +10,13 @@ export default class searchBox extends React.Component {
 
   render () {
 
+    let text = this.props.queryTerms || 'Search reviews'
+
     return (
       <div id="searchBox">
-        [Search]
+        <span>
+          <input type="search" placeholder={text} onSubmit={this.props.submitQuery} />
+        </span>
       </div>
       );
   }

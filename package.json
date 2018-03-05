@@ -10,7 +10,8 @@
   "scripts": {
     "test": "jest",
     "start-dev": "nodemon server/server.js",
-    "start": "server/server.js"
+    "react-dev": "webpack -d --watch",
+    "start": "node server/server.js"
   },
   "dependencies": {
     "axios": "^0.18.0",

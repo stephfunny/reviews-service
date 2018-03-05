@@ -1,8 +1,13 @@
-devDocs
 
+//local dependancies
 node_modules/
 
+//files to be generated during testing
 client/public/index.test.html
 
+//developer documentation
 AirENE-Reviews-Subcomponents.docx
+devDocs
 
+//compiled webpack modules
+client/public/bundle.js

@@ -4,10 +4,16 @@ import _ from 'lodash';
 export default class expandableParagraph extends React.Component {
   constructor(props) {
     super(props);
+
+    let shortLength = this.props.length || 400;
+    let content = this.props.content
+    let shouldShorten = this.props.shouldShorten || content.length > shortLength;
+    
     this.state = {
+      shouldDisplayShort: shouldShorten, 
       short: true,
-      content: this.props.content,
-      shortLength: this.props.length || 400
+      content: content,
+      shortLength: shortLength
     };
 
     this.toggleShort = this.toggleShort.bind(this);
@@ -38,14 +44,14 @@ export default class expandableParagraph extends React.Component {
 
   render() {
 
-    let shouldDisplayShort = this.state.content.length > this.state.shortLength;
-    let text = this.state.short && shouldDisplayShort ? this.shortContent() : this.state.content;
+    //let shouldDisplayShort = this.state.content.length > this.state.shortLength;
+    let text = this.state.short && this.state.shouldDisplayShort ? this.shortContent() : this.state.content;
 
     return (
       <div id="expandableParagraph">
         <p>
           {text}
-          {shouldDisplayShort ? <a style={{text:'blue'}} onClick={this.toggleShort} >{this.state.short ? '... view more' : ' hide' }</a > : null }
+          {this.state.shouldDisplayShort ? <a className="expandable link" style={{text:'blue'}} onClick={this.toggleShort} >{this.state.short ? '... view more' : ' hide' }</a > : null }
         </p>
       </div>
     );

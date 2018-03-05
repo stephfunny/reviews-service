@@ -14,7 +14,7 @@ export default class ReviewListPages extends React.Component {
 
   pageButton(content, destination, selected) {
     return (
-      <button className={selected === true ? 'page-change button selected' : 'page-change button'} onClick={this.props.changePage.bind(destination)} >{content}</button >
+      <button className={selected === true ? 'page-change button selected' : 'page-change button'} onClick={()=>(this.props.changePage(destination))} key={content} >{content}</button >
     );
   }
   
@@ -24,7 +24,7 @@ export default class ReviewListPages extends React.Component {
     console.log(this.props.currentPage + 1, 'of', this.props.pages, 'pages of reviews');
     
     
-    if (this.props.currentPage > 0) {
+    if (this.props.currentPage > 0 && this.props.pages > 2) {
       //back button
       buttons.push(this.pageButton("back",this.props.currentPage - 1));
     }

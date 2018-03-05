@@ -101,10 +101,27 @@ export default class Reviews extends React.Component {
       {
         name: 'Location',
         rating: 3.4
+      },
+      {
+        name: 'Check In',
+        rating: 5
+      },
+      {
+        name: 'Amenities',
+        rating: 2
+      },
+      {
+        name: 'Communication',
+        rating: 5
+      },
+      {
+        name: 'Parking',
+        rating: 3
       }] //will store variable types and render dynamically
     };
 
     this.changePage = this.changePage.bind(this);
+    this.searchReviews = this.searchReviews.bind(this);
 
   }
 
@@ -125,6 +142,7 @@ export default class Reviews extends React.Component {
 
   searchReviews(query) {
     //TODO: set this.state.filterTerms
+    console.log('searching');
   }
 
   paginatedReviews() {
@@ -152,13 +170,13 @@ export default class Reviews extends React.Component {
     return (
       <div id="reviews">
         <div>
-        <ReviewsHeader overallRating={this.state.overallRating} reviews={this.state.reviews.length} searchTerms={this.state.filterTerms} />
+        <ReviewsHeader overallRating={this.state.overallRating} reviews={this.state.reviews.length} searchTerms={this.state.filterTerms} submitQuery={this.searchReviews} />
         </div>
         <div>
           <ReviewAggregates aggregateReviews={this.state.aggregateReviews} />
           <ReviewList reviews={this.paginatedReviews()} />
         </div>
-       {this.shouldPaginateReviews() ? <ReviewListPages currentPage={this.state.currentPage} pages={Math.ceil(this.state.reviews.length / this.state.pagesize)} changePage={this.changePage} /> : null}
+       {this.shouldPaginateReviews() ? <ReviewListPages currentPage={this.state.currentPage} pages={12} changePage={this.changePage} /> : null}
       </div>
     );
   }

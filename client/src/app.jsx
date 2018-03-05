@@ -129,6 +129,9 @@ export default class Reviews extends React.Component {
   updateItem(id) {
     //get and set item
     //get item data
+    if (id === null) {
+      return;
+    }
     axios.get('/' + id + '/reviews')
     .then((response) => {
       console.log(response);
@@ -152,7 +155,8 @@ export default class Reviews extends React.Component {
   }
 
   getIdFromUrl() {
-    return window.location.pathname.split('/')[1];
+    let id = window.location.pathname.split('/')[1];
+    return id !== '' ? id : '1';
   }
 
   filterReviews() {

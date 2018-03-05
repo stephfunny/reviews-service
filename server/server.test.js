@@ -12,8 +12,8 @@ describe('Express Server Endpoints', () => {
   });
 
   test('It should respond with an error to invalid paths', async () => {
-    const response = await supertest(serverApp).get('/baloney');
-    expect(response.statusCode).toBe(404);
+    const response = await supertest(serverApp).get('/baloney85765868798');
+    expect(response.statusCode).not.toBe(200);
   });
 
   test('It should respond to static file requests from the public directory', async () => {

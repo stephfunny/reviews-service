@@ -151,6 +151,10 @@ export default class Reviews extends React.Component {
     return this.filterReviews().length > this.state.pagesize;
   }
 
+  getIdFromUrl() {
+    return window.location.pathname.split('/')[1];
+  }
+
   filterReviews() {
     //TODO: will filter reviews by search terms
     return this.state.reviews;
@@ -180,7 +184,7 @@ export default class Reviews extends React.Component {
 
   componentWillMount() {
     //fetch item data
-    this.updateItem('1');
+    this.updateItem(this.getIdFromUrl());
 
   }
 

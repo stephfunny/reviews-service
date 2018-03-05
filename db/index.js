@@ -5,7 +5,12 @@ const _ = require('lodash');
 const connect = () => {
     let mongoURI = process.env.DATABASE || 'mongodb://127.0.0.1/reviews'; 
     console.log('connecting to', mongoURI);
-    return mongo.connect(mongoURI);
+    return mongo.connect(mongoURI)
+    .then(() => (console.log('connected to database')))
+    .catch((err) => {
+      console.log(err)
+      return err;
+    });
     
 };
 
@@ -80,7 +85,7 @@ const saveReview = (id, reviewObj) => {
   return false;
 };
 
-const getAllReviews = (id, callback) => {
+const getAllReviews = (id) => {
   return Review.findOne({id: id}).exec();
 }
 

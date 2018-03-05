@@ -4,6 +4,7 @@ import ReviewsHeader from './reviewsHeader.jsx';
 import ReviewList from './reviewsList.jsx';
 import ReviewAggregates from './reviewAggregates.jsx';
 import ReviewListPages from './reviewListPages.jsx';
+import axios from 'axios';
 
 
 export default class Reviews extends React.Component {
@@ -128,6 +129,21 @@ export default class Reviews extends React.Component {
   updateItem(id) {
     //get and set item
     //get item data
+    axios.get('/' + id + '/reviews')
+    .then((response) => {
+      console.log(response);
+      this.setState({
+        item: id,
+        currentPage: 0,
+        reviews: response.data.reviews,
+        aggregateReviews: response.data.aggregateReviews,
+        overallRating: response.data.averageRating
+      });
+    })
+    .then(() => {
+      this.changePage(0);
+    })
+    .catch((err) => (console.log(err)));
     
   }
 
@@ -164,6 +180,8 @@ export default class Reviews extends React.Component {
 
   componentWillMount() {
     //fetch item data
+    this.updateItem('1');
+
   }
 
   render() {

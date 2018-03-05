@@ -2,13 +2,11 @@
 const data = require('./mockData.js');
 const db = require('./index.js');
 
-
-for (var i = 0; i < data.length; i++) {
-  async () => {
-    await db.saveExperience(data[i])
-    .catch((err) => (throw err));
+db.connect()
+.then( async () => {
+  for (var i = 0; i < data.length; i++) {
+    await db.saveExperience(data[i]);
   }
-}
-
-db.disconnect()
-.catch((err) => (throw err));
+})
+.then(() => (db.disconnect()))
+.catch((err) => (console.log(err)));

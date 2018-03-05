@@ -11,7 +11,7 @@ db.connect().catch((err) => {
 
 const app = express();
 
-app.get('/', (req, res) => (res.sendFile(path.join(__dirname, '..', 'client', 'public', 'index.html'))));
+app.get('/:id', (req, res) => (res.sendFile(path.join(__dirname, '..', 'client', 'public', 'index.html'))));
 
 app.use('/content', express.static(path.join(__dirname, '..','client','public')));
 

@@ -35,6 +35,21 @@ npm install -g webpack
 npm install
 ```
 
+##Run in Production
+
+From within the root directory
+
+1) run a mongoDB instance
+2)
+```sh
+npm run-script react-dev
+```
+3) In a new terminal window
+```sh
+npm run-script seed-DB
+npm run-script start
+```
+
 ## Run in Development
 
 From within the root directory
@@ -46,7 +61,7 @@ npm run-script react-dev
 ```
 3) In a new terminal window
 ```sh
-npm run-script seedDB
+npm run-script seed-DB
 npm run-script start-dev
 ```
 

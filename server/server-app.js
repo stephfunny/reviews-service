@@ -16,9 +16,9 @@ const sendIndex = (req, res) => (res.sendFile(path.join(__dirname, '..', 'client
 app.get('/', sendIndex);
 app.get('/:id', sendIndex);
 
-app.use('/content', express.static(path.join(__dirname, '..','client','public')));
+app.use('/reviewsContent', express.static(path.join(__dirname, '..','client','public')));
 
-app.use('/:id/reviews', async (req, res) => {
+app.use('/reviews/:id', async (req, res) => {
   let validId = await db.isValidReviewId(req.params.id, false);
   if (!validId) {
     console.log('Request for invalid id');

@@ -65,6 +65,19 @@ let filterValidReviews = (reviews) => {
   return _.filter(reviews, validateReview);
 };
 
+const isValidReviewId = async (id, checkDB) => {
+  console.log(isNaN(id));
+  if (isNaN(id)) {
+    return false
+  } else {
+    if (false) {
+      let reviews = await this.getAllReviews(id);
+      return reviews._id !== null;
+    }
+    return true;
+  }
+}
+
 const saveExperience = (experienceObj/*, callback*/) => {
   return new Promise((resolve, reject) => {
     //console.log('saving experience', experienceObj.id);
@@ -101,8 +114,9 @@ const disconnect = () => {
   // });
 }
 
+module.exports.disconnect = disconnect;
+module.exports.isValidReviewId = isValidReviewId;
 module.exports.saveReview = saveReview;
 module.exports.saveExperience = saveExperience;
 module.exports.getAllReviews = getAllReviews;
 module.exports.connect = connect;
-module.exports.disconnect = disconnect;

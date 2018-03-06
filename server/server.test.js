@@ -1,4 +1,4 @@
-const serverApp = require('./server-app.js');
+const MongoDBMemoryServer = require('mongodb-memory-server');
 const supertest = require('supertest');
 const path = require('path');
 const fs = require('fs');
@@ -6,6 +6,21 @@ const fs = require('fs');
 
 
 describe('Express Server Endpoints', () => {
+  let memMongo;
+  let serverApp;
+
+  beforeAll(async () => {
+    jest.setTimeout(60000);
+    //console.log(MongoDBMemoryServer);
+    memMongo = await new MongoDBMemoryServer.MongoMemoryServer();
+    process.env.DATABASE = await memMongo.getConnectionString();
+    //console.log('test connecting');
+    serverApp = require('./server-app.js');
+    const seedDB = require('../db/seedDB.js');
+    await seedDB();
+  });
+
+
   test('It should respond to the root path', async () => {
     const response = await supertest(serverApp).get('/');
     expect(response.statusCode).toBe(200);

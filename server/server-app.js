@@ -37,7 +37,7 @@ app.use('/:id/reviews', async (req, res) => {
     .catch((err) => {
       console.log(err);
       res.status(500);
-      res.end(err);
+      res.end('server error');
     });
   }
 });

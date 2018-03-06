@@ -67,15 +67,7 @@ let filterValidReviews = (reviews) => {
 
 const isValidReviewId = async (id, checkDB) => {
   //console.log(isNaN(id));
-  if (isNaN(id)) {
-    return false
-  } else {
-    if (false) {
-      let reviews = await this.getAllReviews(id);
-      return reviews._id !== null;
-    }
-    return true;
-  }
+  return !isNaN(id);
 }
 
 const saveExperience = (experienceObj/*, callback*/) => {

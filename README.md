@@ -26,8 +26,6 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - Node 6.13.0
 - etc
 
-## Development
-
 ### Installing Dependencies
 
 From within the root directory:
@@ -35,5 +33,20 @@ From within the root directory:
 ```sh
 npm install -g webpack
 npm install
+```
+
+## Run in Development
+
+From within the root directory
+
+1) run a mongoDB instance
+2)
+```sh
+npm run-script react-dev
+```
+3) In a new terminal window
+```sh
+npm run-script seedDB
+npm run-script start-dev
 ```
 

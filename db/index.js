@@ -5,7 +5,12 @@ const _ = require('lodash');
 const connect = () => {
     let mongoURI = process.env.DATABASE || 'mongodb://127.0.0.1/reviews'; 
     console.log('connecting to', mongoURI);
-    return mongo.connect(mongoURI);
+    return mongo.connect(mongoURI)
+    .then(() => (console.log('connected to database')))
+    .catch((err) => {
+      console.log(err)
+      return err;
+    });
     
 };
 
@@ -60,6 +65,11 @@ let filterValidReviews = (reviews) => {
   return _.filter(reviews, validateReview);
 };
 
+const isValidReviewId = async (id, checkDB) => {
+  //console.log(isNaN(id));
+  return !isNaN(id);
+}
+
 const saveExperience = (experienceObj/*, callback*/) => {
   return new Promise((resolve, reject) => {
     //console.log('saving experience', experienceObj.id);
@@ -80,7 +90,7 @@ const saveReview = (id, reviewObj) => {
   return false;
 };
 
-const getAllReviews = (id, callback) => {
+const getAllReviews = (id) => {
   return Review.findOne({id: id}).exec();
 }
 
@@ -96,8 +106,9 @@ const disconnect = () => {
   // });
 }
 
+module.exports.disconnect = disconnect;
+module.exports.isValidReviewId = isValidReviewId;
 module.exports.saveReview = saveReview;
 module.exports.saveExperience = saveExperience;
 module.exports.getAllReviews = getAllReviews;
 module.exports.connect = connect;
-module.exports.disconnect = disconnect;

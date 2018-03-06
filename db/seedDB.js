@@ -3,12 +3,16 @@ const data = require('./mockData.js');
 const db = require('./index.js');
 
 
-for (var i = 0; i < data.length; i++) {
-  async () => {
-    await db.saveExperience(data[i])
-    .catch((err) => (throw err));
-  }
+const seedDB = async () => {
+  db.connect()
+  .then( async () => {
+    for (var i = 0; i < data.length; i++) {
+      await db.saveExperience(data[i]);
+    }
+  })
+  .then(() => (db.disconnect()))
+  .catch((err) => (console.log(err)));
 }
 
-db.disconnect()
-.catch((err) => (throw err));
+module.exports = seedDB;
+

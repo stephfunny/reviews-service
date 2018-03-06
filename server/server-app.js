@@ -20,7 +20,7 @@ app.use('/content', express.static(path.join(__dirname, '..','client','public'))
 
 app.use('/:id/reviews', async (req, res) => {
   let validId = await db.isValidReviewId(req.params.id, false);
-  if (validId) {
+  if (!validId) {
     console.log('Request for invalid id');
     res.status(404);
     res.end('Request for invalid id');

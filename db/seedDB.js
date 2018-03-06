@@ -10,7 +10,10 @@ const seedDB = async () => {
       await db.saveExperience(data[i]);
     }
   })
-  .then(() => (db.disconnect()))
+  .then(() => {
+    console.log('seeded database');
+    db.disconnect();
+  })
   .catch((err) => (console.log(err)));
 }
 

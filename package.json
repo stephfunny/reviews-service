@@ -11,6 +11,7 @@
     "test": "jest",
     "start-dev": "nodemon server/server.js",
     "react-dev": "webpack -d --watch",
+    "seed-db": "node db/seedDB-npm.js",
     "start": "node server/server.js"
   },
   "dependencies": {

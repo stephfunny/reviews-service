@@ -66,7 +66,7 @@ let filterValidReviews = (reviews) => {
 };
 
 const isValidReviewId = async (id, checkDB) => {
-  console.log(isNaN(id));
+  //console.log(isNaN(id));
   if (isNaN(id)) {
     return false
   } else {

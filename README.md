@@ -42,7 +42,7 @@ From within the root directory
 1) run a mongoDB instance
 2)
 ```sh
-npm run-script react-dev
+npm run-script build
 ```
 3) In a new terminal window
 ```sh

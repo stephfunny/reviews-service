@@ -17,79 +17,79 @@ export default class Reviews extends React.Component {
       currentPage: 0,
       reviews: [{
         _id: 1,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome! super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain.  '
       },
       {
         _id: 2,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome!'
       },
       {
         _id: 3,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome!'
       },
       {
         _id: 4,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome!'
       },
       {
         _id: 5,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome!'
       },
       {
         _id: 6,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome!'
       },
       {
         _id: 7,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome!'
       },
       {
         _id: 8,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome!'
       },
       {
         _id: 9,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome!'
       },
       {
         _id: 10,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome!'
       },
       {
         _id: 11,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome!'
       },
       {
         _id: 12,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome!'
       },
       {
         _id: 13,
-        username:'jill',
+        user:'jill',
         date:'Feb 2013',
         comment:'it was awesome!'
       }],

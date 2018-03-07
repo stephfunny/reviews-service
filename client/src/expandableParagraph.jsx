@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import styles from './expandableParagraph.css';
 
 export default class expandableParagraph extends React.Component {
   constructor(props) {
@@ -48,10 +49,10 @@ export default class expandableParagraph extends React.Component {
     let text = this.state.short && this.state.shouldDisplayShort ? this.shortContent() : this.state.content;
 
     return (
-      <div id="expandableParagraph">
+      <div className={this.props.className + ' ' + styles.expandableParagraphDefaults}>
         <p>
-          {text}
-          {this.state.shouldDisplayShort ? <a className="expandable link" style={{text:'blue'}} onClick={this.toggleShort} >{this.state.short ? '... view more' : ' hide' }</a > : null }
+          {this.state.shouldDisplayShort && this.state.short ? text + '...' : text}
+          {this.state.shouldDisplayShort ? <a className={styles.expandableLink} style={{text:'blue'}} onClick={this.toggleShort} >{this.state.short ? 'view more' : 'hide' }</a > : null }
         </p>
       </div>
     );

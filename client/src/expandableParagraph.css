@@ -1,0 +1,9 @@
+/*GLOBAL STYLING ONLY!  Apply context specific styling to component directly in parent component*/
+
+.expandableParagraphDefaults {
+	text-align: left;
+}
+
+.expandableLink {
+	color: gray;
+}

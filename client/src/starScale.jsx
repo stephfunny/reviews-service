@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import starSVGPath from './starSVGPath.jsx';
+import defaultStyles from './starScale.css';
 
 export default class StarScale extends React.Component {
   constructor() {
@@ -11,7 +12,7 @@ export default class StarScale extends React.Component {
 
   Star(id) {
     return (
-      <svg key={'star_'+id} viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" style={{height:"100%",width:"20%",display:"inline-block",fill:"black"}}><path d={starSVGPath} ></path></svg>
+      <svg className={defaultStyles.star} key={'star_'+id} viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" ><path d={starSVGPath} ></path></svg>
     );
   }
 
@@ -27,7 +28,7 @@ export default class StarScale extends React.Component {
   render () {
 
     return (
-      <div style={{width:this.props.width || "100px",height: this.props.height || "20px"}}>
+      <div className={(this.props.className !== undefined) ? this.props.className : defaultStyles.starScale} >
         <span>{this.Stars()}</span>
       </div>
       );

@@ -1,4 +1,10 @@
 import React from 'react';
+import styles from './ReviewListPages.css';
+//TODO import arrow svgs from './navigationArrows.jsx';
+let arrows = {
+  forward: 'next',
+  backward: 'back'
+};
 
 export default class ReviewListPages extends React.Component {
   constructor(props) {
@@ -6,15 +12,19 @@ export default class ReviewListPages extends React.Component {
 
   }
   
-  //forward
-  //backward
-  //nearby w/current highlighted
-
-  //button
 
   pageButton(content, destination, selected) {
     return (
-      <button className={selected === true ? 'page-change button selected' : 'page-change button'} onClick={()=>(this.props.changePage(destination))} key={content} >{content}</button >
+      <button className={selected === true ? styles.pageChangeButton + ' ' + styles.currentPageChangeButton : styles.pageChangeButton} onClick={()=>(this.props.changePage(destination))} key={content} >{content}</button >
+    );
+  }
+
+  emptyButton(content, key) {
+    if (!key) {
+      key = 'a';
+    }
+    return (
+      <div className={styles.empty} key={key} >{content}</div>
     );
   }
   
@@ -26,7 +36,7 @@ export default class ReviewListPages extends React.Component {
     
     if (this.props.currentPage > 0 && this.props.pages > 2) {
       //back button
-      buttons.push(this.pageButton("back",this.props.currentPage - 1));
+      buttons.push(this.pageButton(arrows.backward,this.props.currentPage - 1));
     }
 
     //always page 1
@@ -38,7 +48,7 @@ export default class ReviewListPages extends React.Component {
         buttons.push(this.pageButton(''+ (i + 1), i, i === this.props.currentPage));
       }
       if (this.props.pages > 4) {
-        buttons.push('...');
+        buttons.push(this.emptyButton('...'));
       }
     }
 
@@ -47,12 +57,12 @@ export default class ReviewListPages extends React.Component {
       for(var i = 1; i < this.props.pages && i < this.props.currentPage + 2; i++) {
         buttons.push(this.pageButton(''+ (i + 1), i, i === this.props.currentPage));
       }
-      buttons.push('...');
+      buttons.push(this.emptyButton('...'));
     }
 
     else if (this.props.currentPage > this.props.pages - 3) {
       //buttons x..end (3)
-      buttons.push('...');
+      buttons.push(this.emptyButton('...'));
       for(var i = this.props.pages - 3; i < this.props.pages - 1; i++) {
         buttons.push(this.pageButton(''+ (i + 1), i, i === this.props.currentPage));
       }
@@ -60,7 +70,7 @@ export default class ReviewListPages extends React.Component {
 
     else if (this.props.currentPage > this.props.pages - 5) {
       //buttons x-1..end (4-5)
-      buttons.push('...');
+      buttons.push(this.emptyButton('...'));
       for(var i = this.props.currentPage - 1; i < this.props.pages - 1; i++) {
         buttons.push(this.pageButton(''+ (i + 1), i, i === this.props.currentPage));
       }
@@ -68,21 +78,21 @@ export default class ReviewListPages extends React.Component {
 
     else {
       // x-1 to x+1 (3)
-      buttons.push('...');
+      buttons.push(this.emptyButton('...'));
       for(var i = this.props.currentPage - 1; i < this.props.pages - 1 && i < this.props.currentPage + 2; i++) {
         buttons.push(this.pageButton(''+ (i + 1), i, i === this.props.currentPage));
       }
-      buttons.push('...');
+      buttons.push(this.emptyButton('...', 'b'));
     }
 
     //always last page
     if (this.props.pages > 3) {
-      buttons.push(this.pageButton(this.props.pages, this.props.pages, this.props.pages === this.props.currentPage));
+      buttons.push(this.pageButton(this.props.pages, this.props.pages - 1, this.props.pages === this.props.currentPage + 1));
     }
 
     if (this.props.currentPage < this.props.pages - 1  && this.props.pages > 2) {
       //forward button
-      buttons.push(this.pageButton("next",this.props.currentPage + 1));
+      buttons.push(this.pageButton(arrows.forward,this.props.currentPage + 1));
     }
 
     return buttons;
@@ -92,7 +102,7 @@ export default class ReviewListPages extends React.Component {
   render () {
 
     return (
-      <div id="reviewlistpages">
+      <div id="reviewlistpages" className={styles.reviewListPages}>
         <span>
           {this.generateButtons()}
         </span>

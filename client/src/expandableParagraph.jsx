@@ -51,8 +51,8 @@ export default class expandableParagraph extends React.Component {
     return (
       <div className={this.props.className + ' ' + styles.expandableParagraphDefaults}>
         <p>
-          {text}
-          {this.state.shouldDisplayShort ? <a className="expandable link" style={{text:'blue'}} onClick={this.toggleShort} >{this.state.short ? '... view more' : ' hide' }</a > : null }
+          {this.state.shouldDisplayShort && this.state.short ? text + '...' : text}
+          {this.state.shouldDisplayShort ? <a className={styles.expandableLink} style={{text:'blue'}} onClick={this.toggleShort} >{this.state.short ? 'view more' : 'hide' }</a > : null }
         </p>
       </div>
     );

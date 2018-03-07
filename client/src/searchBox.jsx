@@ -1,5 +1,6 @@
 import React from 'react';
 import magnifierSVGPath from './magnifierSVGPath.jsx';
+import styles from './searchBox.css';
 
 export default class searchBox extends React.Component {
   constructor(props) {
@@ -13,17 +14,19 @@ export default class searchBox extends React.Component {
     let text = this.props.queryTerms || 'Search reviews'
 
     return (
-      <div id="searchBox">
+      <div id="searchBox" className={this.props.className} >
+        <div className={styles.borderBox} >
         <span>
-        <div style={{display: 'inline-block'}} >
-          <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style={{height: '1em', width: '1em', display: 'block', fill: 'black'}} >
+        <div className={styles.magnifier} >
+          <svg className={styles.magnifierSVG} viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" >
             <path d={magnifierSVGPath} fillRule="evenodd"></path>
           </svg>
         </div>
-        <div style={{display: 'inline-block'}} >
-          <input type="text" placeholder={text} onSubmit={this.props.submitQuery} sytle={{display: 'inline', height: '1em', width: '1em'}} />
+        <div className={styles.textBox} >
+          <input className={styles.textInput} type="text" placeholder={text} onSubmit={this.props.submitQuery} />
         </div>
         </span>
+      </div>
       </div>
       );
   }

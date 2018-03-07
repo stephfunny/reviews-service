@@ -1,6 +1,7 @@
 import React from 'react';
 import StarScale from './starScale.jsx';
 import SearchBox  from './searchBox.jsx';
+import styles from './reviewsHeader.css';
 
 export default class ReviewHeader extends React.Component {
   constructor() {
@@ -13,23 +14,17 @@ export default class ReviewHeader extends React.Component {
   render () {
 
     return (
-      <div>
-        <div id="reviews header">
-          <div>
-            <h4>
-              <span>
-                <span>{this.props.reviews} Reviews</span>
-              </span>
-              <StarScale rating={this.props.overallRating} height="30px" width="120px" />
-            </h4>
+      <div id="reviews-header" className={styles.reviewsHeader}>
+        <SearchBox className={styles.searchBox} text={this.props.searchTerms} submitQuery={this.props.submitQuery} searchTerms={this.props.searchTerms} />
+        <div id="reviews-header-overview" className={styles.overview} >
+          <div id="reviews-header-title" className={styles.title} >
+            <h4 className={styles.reviewsCount}>{this.props.reviews + ' Reviews'}</h4>
           </div>
-            <SearchBox text={this.props.searchTerms} submitQuery={this.props.submitQuery} searchTerms={this.props.searchTerms} />
-        </div>
-        <div style={{marginTop:'16px', marginBottom:'16px'}} >
-          <div className="divider">
-            <hr/>
+          <div id="reviews-header-rating" className={styles.rating} >
+            <StarScale className={styles.starScale} rating={this.props.overallRating} height="30px" width="120px" />
           </div>
         </div>
+        <hr className={styles.hr} />
       </div>
       );
   }

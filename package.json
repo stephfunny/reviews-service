@@ -12,12 +12,13 @@
     "start-dev": "nodemon server/server.js",
     "react-dev": "webpack -d --watch",
     "seed-db": "node db/seedDB-npm.js",
-    "build" : "webpack",
+    "build": "webpack",
     "start": "node server/server.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
+    "css-loader": "^0.28.10",
     "express": "^4.16.2",
     "fs": "0.0.1-security",
     "jquery": "^3.3.1",
@@ -27,6 +28,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "request": "^2.83.0",
+    "style-loader": "^0.20.2",
     "webpack": "^3.11.0"
   },
   "babel": {

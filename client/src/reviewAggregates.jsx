@@ -1,6 +1,7 @@
 import React from 'react';
 import StarScale from './StarScale.jsx';
 import _ from 'lodash';
+import styles from './reviewAggregates.css';
 
 export default class ReviewAggregates extends React.Component {
   constructor(props) {
@@ -11,12 +12,12 @@ export default class ReviewAggregates extends React.Component {
 
   displayReview(name, rating, key) {
     return (
-    <div key={key}>
-      <div>
+    <div key={key} className={styles.aggregateReview} >
+      <div className={styles.name} >
        <span>{name}</span>
       </div>
-      <div>
-        <StarScale rating={rating} />
+      <div className={styles.rating} >
+        <StarScale rating={rating} className={styles.StarScale} />
       </div>
     </div>
     );
@@ -24,10 +25,12 @@ export default class ReviewAggregates extends React.Component {
 
 
   render () {
+    let reviews = _.map(this.props.aggregateReviews, (review, i) => (this.displayReview(review.name, review.rating, i)));
 
     return (
-      <div id="reviewaggeegates">
-        {_.map(this.props.aggregateReviews, (review, i) => (this.displayReview(review.name, review.rating, i)))}
+      <div id="reviewAggregates" className={styles.reviewAggregates} >
+        <div className={styles.leftColumn}>{reviews.slice(0, Math.ceil(reviews.length / 2))} </div>
+        <div className={styles.rightColumn}>{reviews.slice(Math.ceil(reviews.length / 2), reviews.length)} </div>
       </div>
     );
   }

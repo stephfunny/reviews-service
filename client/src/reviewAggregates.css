@@ -1,0 +1,65 @@
+.reviewAggregates {
+  position: relative;
+  display: block;
+  max-width: 670px;
+  margin: 0 20px 0 20px;
+  padding: 0 0 0 0;
+
+}
+
+.aggregateReview {
+  height: 30px;
+  width: 100%;
+  margin: 0 0 0 0;
+}
+
+.name {
+  font-size: 20px;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+
+}
+
+.rating {
+  display: inline-block;
+  position: absolute;
+  right: 135px;
+
+}
+
+.StarScale {
+  position: absolute;
+  height: 20px;
+  width: 125px;
+  color: black;
+  left: 0;
+
+}
+
+.fiveStarScale {
+  height: 27px;
+  width: 135px;
+  color: black;
+  left: 0;
+  position: absolute;
+
+}
+
+.rightColumn {
+	display: inline-block;
+	position: relative;
+	/*border: 10px solid red;*/
+	padding: 0 0 0 0;
+	margin: 5px 20px 0px 5px;
+	width: 45%;
+}
+
+.leftColumn {
+	display: inline-block;
+	position: relative;
+	/*border: 10px solid blue;*/
+	padding: 0 0 0 0;
+	margin: 5px 5px 0px 20px;
+	width: 45%;
+}

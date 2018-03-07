@@ -1,0 +1,37 @@
+.reviewListPages {
+  margin: 10px 20px 10px 20px;
+  width: 100%;
+  height: 30px;
+}
+
+.pageChangeButton{
+	position: relative;
+	display: inline;
+	height: 30px;
+	width: 30px;
+	border: 1px solid grey;
+	margin: 5px 5px 5px 5px;
+	text-align: center;
+	border-radius: 3px;
+	padding: 0 0 0 0;
+
+}
+
+.currentPageChangeButton {
+	background-color: lightgrey;
+
+}
+
+.empty {
+	position: relative;
+	display: inline;
+	height: 30px;
+	width: 100px;
+	margin: 5px 5px 5px 5px;
+}
+.innerEmpty {
+	position: relative;
+	display: inline;
+	text-align: center;
+	width: 30px;
+}

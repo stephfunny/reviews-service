@@ -1,5 +1,5 @@
 import React from 'react';
-import StarScale from './StarScale.jsx';
+import StarScale from './starScale.jsx';
 import _ from 'lodash';
 import styles from './reviewAggregates.css';
 

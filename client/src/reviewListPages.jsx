@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ReviewListPages.css';
+import styles from './reviewListPages.css';
 //TODO import arrow svgs from './navigationArrows.jsx';
 let arrows = {
   forward: 'next',

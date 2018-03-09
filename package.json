@@ -13,7 +13,8 @@
     "react-dev": "webpack -d --watch",
     "seed-db": "node db/seedDB-npm.js",
     "build": "webpack",
-    "start": "node server/server.js"
+    "start-server": "node server/server.js",
+    "start": "node db/seedDB-npm.js; webpack; node server/server.js"
   },
   "dependencies": {
     "axios": "^0.18.0",

@@ -31,7 +31,7 @@ export default class ReviewListPages extends React.Component {
   generateButtons() {
 
     let buttons = [];
-    console.log(this.props.currentPage + 1, 'of', this.props.pages, 'pages of reviews');
+    //console.log(this.props.currentPage + 1, 'of', this.props.pages, 'pages of reviews');
     
     
     if (this.props.currentPage > 0 && this.props.pages > 2) {

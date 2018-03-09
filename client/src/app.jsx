@@ -134,7 +134,7 @@ export default class Reviews extends React.Component {
     }
     axios.get('/reviews/' + id )
     .then((response) => {
-      console.log(response);
+      //console.log(response);
       this.setState({
         item: id,
         currentPage: 0,
@@ -172,9 +172,9 @@ export default class Reviews extends React.Component {
   paginatedReviews() {
     //breaks reviews up into pages, reviews will be stored paginated
     let lastReview = (this.state.currentPage + 1) * this.state.pagesize;
-    console.log('rendering reviews page', this.state.currentPage, ':', this.state.currentPage * this.state.pagesize, 'to', (lastReview > this.state.reviews.length) === true ? this.state.reviews.length: lastReview);
+    //console.log('rendering reviews page', this.state.currentPage, ':', this.state.currentPage * this.state.pagesize, 'to', (lastReview > this.state.reviews.length) === true ? this.state.reviews.length: lastReview);
     let reviews =  this.filterReviews().slice(this.state.currentPage * this.state.pagesize, (lastReview > this.state.reviews.length) === true ? this.state.reviews.length: lastReview);
-    console.log(reviews);
+    //console.log(reviews);
     return reviews;
   }
 
@@ -202,7 +202,7 @@ export default class Reviews extends React.Component {
           <ReviewAggregates aggregateReviews={this.state.aggregateReviews} />
           <ReviewList reviews={this.paginatedReviews()} />
         </div>
-       {this.shouldPaginateReviews() ? <ReviewListPages currentPage={this.state.currentPage} pages={12} changePage={this.changePage} /> : null}
+       {this.shouldPaginateReviews() ? <ReviewListPages currentPage={this.state.currentPage} pages={Math.ceil(this.state.reviews.length / this.state.pagesize)} changePage={this.changePage} /> : null}
       </div>
     );
   }

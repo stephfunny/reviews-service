@@ -64,6 +64,7 @@
 	/*border: 3px solid #73AD21;*/
     margin: 0 0 0 0;
 	padding: 0 0 0 0;
+	color: #484848 !important;
 
 
 }
@@ -77,6 +78,11 @@
 	/*border: 3px solid #73AD21;*/
     margin: 0 0 0 0;
 	padding: 0 0 0 0;
+
+	font-size: 15px !important;
+    line-height: 18px !important;
+    letter-spacing: 0.2px !important;
+    font-weight: 300 !important;
 
 }
 

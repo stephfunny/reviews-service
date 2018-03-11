@@ -5,5 +5,7 @@
 }
 
 .expandableLink {
-	color: gray;
+	color: #008489 !important;
+	cursor: pointer !important;
+	user-select: auto !important;
 }

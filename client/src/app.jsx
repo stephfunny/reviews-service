@@ -5,6 +5,7 @@ import ReviewList from './reviewsList.jsx';
 import ReviewAggregates from './reviewAggregates.jsx';
 import ReviewListPages from './reviewListPages.jsx';
 import axios from 'axios';
+import styles from './app.css';
 
 
 export default class Reviews extends React.Component {
@@ -194,7 +195,7 @@ export default class Reviews extends React.Component {
 
   render() {
     return (
-      <div id="reviews">
+      <div id="reviews" className={styles.reviews}>
         <div>
         <ReviewsHeader overallRating={this.state.overallRating} reviews={this.state.reviews.length} searchTerms={this.state.filterTerms} submitQuery={this.searchReviews} />
         </div>

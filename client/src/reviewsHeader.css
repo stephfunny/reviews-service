@@ -9,6 +9,7 @@
 	display: block;
 	width: 100%;
 	margin: 0 20px 0 20px;
+	z-index: 0;
 
 }
 
@@ -20,7 +21,11 @@
 	/*border: 10px solid red;*/
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
-	font-size: 30px;
+	font-weight: 700 !important;
+	font-size: 28px !important;
+    line-height: 32px !important;
+    letter-spacing: -0.6px !important;
+    color: #484848 !important;
 }
 
 .reviewsCount {
@@ -36,6 +41,7 @@
 	padding: 0 0 0 10px;
 	margin: 0 0 0 0;
 	/*border: 10px solid red;*/
+	color: #008489 !important;
 
 }
 
@@ -45,6 +51,8 @@
 	width: 150px;
 	height: 30px;
 	right: 0px;
+	z-index: 5;
+	
 
 }
 

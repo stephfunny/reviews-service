@@ -15,8 +15,8 @@ export default class ReviewHeader extends React.Component {
 
     return (
       <div id="reviews-header" className={styles.reviewsHeader}>
-        <SearchBox className={styles.searchBox} text={this.props.searchTerms} submitQuery={this.props.submitQuery} searchTerms={this.props.searchTerms} />
         <div id="reviews-header-overview" className={styles.overview} >
+          <SearchBox className={styles.searchBox} text={this.props.searchTerms} submitQuery={this.props.submitQuery} searchTerms={this.props.searchTerms} />
           <div id="reviews-header-title" className={styles.title} >
             <h2 className={styles.reviewsCount}>{this.props.reviews + ' Reviews'}</h2>
           </div>

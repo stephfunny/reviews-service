@@ -5,7 +5,24 @@ import styles from './searchBox.css';
 export default class searchBox extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      searchText: ''
+    };
 
+    this.submitQuery = this.submitQuery.bind(this);
+  }
+
+  submitQuery(e) {
+    if (e.key === 'Enter') {
+      //TODO: fix! does not detect enter key properly!
+      console.log('search is not implemented');
+      this.props.submitQuery(this.state.searchText);
+    } else {
+      //console.log(e.key); //does detect keys properly
+      this.setState({
+        searchText: this.state.searchText + e.key
+      });
+    }
   }
 
 
@@ -23,7 +40,7 @@ export default class searchBox extends React.Component {
           </svg>
         </div>
         <div className={styles.textBox} >
-          <input className={styles.textInput} type="text" placeholder={text} onSubmit={this.props.submitQuery} />
+          <input className={styles.textInput} type="text" placeholder={text} onKeyPress={this.submitQuery} />
         </div>
         </span>
       </div>

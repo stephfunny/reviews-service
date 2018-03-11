@@ -187,6 +187,10 @@ export default class Reviews extends React.Component {
     });
   }
 
+  onFlagReview(flagInfo) {
+    //TODO: //post flagInfo to an endpoint
+  }
+
   componentWillMount() {
     //fetch item data
     this.updateItem(this.getIdFromUrl());
@@ -201,7 +205,7 @@ export default class Reviews extends React.Component {
         </div>
         <div>
           <ReviewAggregates aggregateReviews={this.state.aggregateReviews} />
-          <ReviewList reviews={this.paginatedReviews()} />
+          <ReviewList reviews={this.paginatedReviews()} onFlagReview={this.onFlagReview} />
         </div>
        {this.shouldPaginateReviews() ? <ReviewListPages currentPage={this.state.currentPage} pages={Math.ceil(this.state.reviews.length / this.state.pagesize)} changePage={this.changePage} /> : null}
       </div>

@@ -133,7 +133,7 @@ export default class Reviews extends React.Component {
     if (id === null) {
       return;
     }
-    axios.get('/reviews/' + id )
+    axios.get('/restaurants/' + id + '/reviews')
     .then((response) => {
       //console.log(response);
       this.setState({

@@ -18,7 +18,7 @@ export default class ReviewHeader extends React.Component {
         <div id="reviews-header-overview" className={styles.overview} >
           {/*<SearchBox className={styles.searchBox} text={this.props.searchTerms} submitQuery={this.props.submitQuery} searchTerms={this.props.searchTerms} />*/}
           <div id="reviews-header-title" className={styles.titleRating} >
-            <h4 className={styles.googleReviews}>Google Reviews</h4>
+            <h4 className={styles.googleReviews}>Reactor Reviews</h4>
           </div>
           <div id="reviews-header-title-rating" className={styles.title} >
             <h4 className={styles.titleRating}>{this.props.overallRating + '.0'}</h4>

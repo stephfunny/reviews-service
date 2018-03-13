@@ -17,15 +17,34 @@
 	position: relative;
 	left: 0;
 	display: inline-block;
-	height: 30px;
+	height: 24px;
 	/*border: 10px solid red;*/
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
-	font-weight: 700 !important;
-	font-size: 28px !important;
-    line-height: 32px !important;
-    letter-spacing: -0.6px !important;
-    color: #484848 !important;
+	
+    font-family: 'Calibre-Semibold';
+    font-size: 24px;
+    color: black;
+}
+
+.titleRating {
+	position: relative;
+	left: 0;
+	display: inline-block;
+	height: 24px;
+	/*border: 10px solid red;*/
+	margin: 5px 5px 5px 5px;
+	padding: 0 0 0 0;
+	
+    font-family: 'Calibre-Semibold';
+    font-size: 24px;
+    color: black;
+}
+
+.googleReviews {
+	color: silver;
+	position: relative;
+	display: inline;
 }
 
 .reviewsCount {
@@ -35,21 +54,21 @@
 .rating {
 	position: relative;
 	display: inline-block;
-	width: 150px;
+	width: 85px;
 	left: 0px;
-	height: 30px;
+	height: 15px;
 	padding: 0 0 0 10px;
 	margin: 0 0 0 0;
 	/*border: 10px solid red;*/
-	color: #008489 !important;
+	color: black;
 
 }
 
 .starScale {
 	position: relative;
 	display: inline-block;
-	width: 150px;
-	height: 30px;
+	width: 75px;
+	height: 15px;
 	right: 0px;
 	z-index: 5;
 	

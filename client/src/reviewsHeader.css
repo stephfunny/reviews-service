@@ -22,7 +22,6 @@
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	
-    font-family: 'Calibre-Semibold';
     font-size: 16px;
     color: black;
 }
@@ -36,7 +35,6 @@
 	margin: 5px 5px 5px 5px;
 	padding: 0 0 0 0;
 	
-    font-family: 'Calibre-Semibold';
     font-size: 16px;
     color: #ae002f;
 }
@@ -54,7 +52,7 @@
 	position: relative;
 	display: inline;
 	-webkit-font-smoothing: antialiased;
-	font-family: 'Calibre-Semibold';
+
 }
 
 .reviewsCount {

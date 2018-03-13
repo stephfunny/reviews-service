@@ -45,7 +45,7 @@ export default class ReviewsListEntry extends React.Component {
                 </div>
               </div> 
             </div>
-            <UserPhoto id="review-item-user-photo" className={styles.userPhoto} />
+            <UserPhoto id="review-item-user-photo" className={styles.userPhoto} name={this.props.review.user} />
           </div>
           
         </div>

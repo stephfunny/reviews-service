@@ -26,7 +26,7 @@ export default class StarScale extends React.Component {
 
   PointyStar(id, filled) {
     return (
-      <svg className={filled ? defaultStyles.filledStar : defaultStyles.star} key={'star_'+id} viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" ><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" ></path></svg>
+      <svg className={filled ? defaultStyles.filledStar : defaultStyles.star} key={'star_'+id} viewBox="0 0 15 15" role="presentation" aria-hidden="true" focusable="false" ><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" ></path></svg>
     );
   }
     

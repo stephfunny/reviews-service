@@ -28,7 +28,7 @@ const aggregateReviewSchema = {
 };
 
 const reviewSchema = {
-  id: Number,
+  id: String,
   aggregateReviews: [aggregateReviewSchema],
   averageRating: Number,
   ratingAccuracyDesc: Number,

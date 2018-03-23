@@ -1,7 +1,7 @@
 require('newrelic');
 const express = require('express');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
+// const bodyParser = require('body-parser');
+// const morgan = require('morgan');
 const path = require('path');
 // const db = require('../db/index.js');
 const db = require('../db/sean/index.js');

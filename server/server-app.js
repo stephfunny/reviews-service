@@ -1,8 +1,11 @@
+require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
-const db = require('../db/index.js');
+// const db = require('../db/index.js');
+const db = require('../db/sean/index.js');
+// const db = require('../db/sql/model.js');
 
 db.connect().catch((err) => {
   console.log(err);
@@ -25,10 +28,10 @@ app.use('/restaurants/:id/reviews', async (req, res) => {
     res.status(404);
     res.end('Request for invalid id');
   } else {
-    console.log('get request recieved for ' + req.params.id);
+    // console.log('get request recieved for ' + req.params.id);
     db.getAllReviews(req.params.id)
     .then((reviews) => {
-      //console.log(reviews);
+      // console.log(reviews);
       if (reviews._id === null) {
         new Error('no data found')
       }

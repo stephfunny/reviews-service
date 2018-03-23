@@ -71,14 +71,14 @@
 .date {
 	display: block;
 	position: absolute;
-	top: 50%;
+	top: 66%;
 	left: 20px;
 	height:50%;
 	/*border: 3px solid #73AD21;*/
     margin: 0 0 0 0;
 	padding: 0 0 0 0;
     color: #656666;
-	font-size: 15px !important;
+	font-size: 12px !important;
     line-height: 18px !important;
     letter-spacing: 0.2px !important;
     font-weight: 300 !important;

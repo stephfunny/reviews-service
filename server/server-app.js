@@ -11,15 +11,23 @@ db.connect().catch((err) => {
   console.log(err);
 });
 
-const cors = require('cors');
+// const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
 const sendIndex = (req, res) => (res.sendFile(path.join(__dirname, '..', 'client', 'public', 'index.html')));
 
 app.get('/', sendIndex);
 app.get('/:id', sendIndex);
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, X-Parse-Application-Id, X-Parse-REST-API-Key, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Max-Age', 10); // Seconds.
+  next();
+});
 
 app.use('/reviews/content', express.static(path.join(__dirname, '..','client','public')));
 

@@ -13,7 +13,7 @@ export default class ReviewsListEntry extends React.Component {
   flagReview() {
     //display modal to collect info
     //this.props.onFlagReview(this.props.review._id);
-    let flagInfo = {id: this.props.review.review_id}
+    let flagInfo = {id: this.props.review.review_index}
     console.log('flagged review', flagInfo);
   }
 
@@ -32,7 +32,7 @@ export default class ReviewsListEntry extends React.Component {
           </div>
           <div id="review-item-user-details" className={styles.userDetails}>
             
-            <div id="revidw-item-show-inline-block" className={styles.userShowInlineBlock}>
+            <div id="review-item-show-inline-block" className={styles.userShowInlineBlock}>
               <div id="review-item-username-left-boundary" className={styles.usernameLeftBoundary} >
                 <div id="review-item-username" className={styles.username}>
                   <h3>

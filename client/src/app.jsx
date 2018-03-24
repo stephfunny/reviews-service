@@ -16,97 +16,99 @@ export default class Reviews extends React.Component {
       item: null,  //get from props?
       pagesize: 10,
       currentPage: 0,
-      reviews: [{
-        review_index: 0,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome! super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain.  '
-      },
-      {
-        review_index: 2,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome!'
-      },
-      {
-        review_index: 3,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome!'
-      },
-      {
-        review_index: 4,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome!'
-      },
-      {
-        review_index: 5,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome!'
-      },
-      {
-        review_index: 6,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome!'
-      },
-      {
-        review_index: 7,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome!'
-      },
-      {
-        review_index: 8,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome!'
-      },
-      {
-        review_index: 9,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome!'
-      },
-      {
-        review_index: 10,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome!'
-      },
-      {
-        review_index: 11,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome!'
-      },
-      {
-        review_index: 12,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome!'
-      },
-      {
-        review_index: 13,
-        author_name:'jill',
-        profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-        time:'Feb 2013',
-        text:'it was awesome!'
-      }],
+      reviews: [
+      // {
+      //   review_index: 0,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome! super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain.  '
+      // },
+      // {
+      //   review_index: 1,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome!'
+      // },
+      // {
+      //   review_index: 3,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome!'
+      // },
+      // {
+      //   review_index: 4,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome!'
+      // },
+      // {
+      //   review_index: 5,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome!'
+      // },
+      // {
+      //   review_index: 6,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome!'
+      // },
+      // {
+      //   review_index: 7,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome!'
+      // },
+      // {
+      //   review_index: 8,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome!'
+      // },
+      // {
+      //   review_index: 9,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome!'
+      // },
+      // {
+      //   review_index: 10,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome!'
+      // },
+      // {
+      //   review_index: 11,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome!'
+      // },
+      // {
+      //   review_index: 12,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome!'
+      // },
+      // {
+      //   review_index: 13,
+      //   author_name:'jill',
+      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
+      //   time:'Feb 2013',
+      //   text:'it was awesome!'
+      // }
+      ],
       filterTerms: null,
       overallRating: 4,
       aggregateReviews: [{
@@ -132,7 +134,9 @@ export default class Reviews extends React.Component {
       {
         name: 'Parking',
         rating: 3
-      }] //will store variable types and render dynamically
+      }
+
+      ] //will store variable types and render dynamically
     };
 
     this.changePage = this.changePage.bind(this);

@@ -14,7 +14,7 @@
     "seed-db": "node db/seedDB-npm.js",
     "build": "webpack",
     "start-server": "node server/server.js",
-    "start": "node db/seedDB-npm.js; webpack; node server/server.js"
+    "start": "webpack; DATABASE='mongodb://172.31.12.196:27017/zagat' node server/server.js"
   },
   "dependencies": {
     "Faker": "^0.7.2",

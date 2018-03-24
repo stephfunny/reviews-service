@@ -17,7 +17,7 @@ export default class Reviews extends React.Component {
       pagesize: 10,
       currentPage: 0,
       reviews: [{
-        review_index: 1,
+        review_index: 0,
         author_name:'jill',
         profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
         time:'Feb 2013',

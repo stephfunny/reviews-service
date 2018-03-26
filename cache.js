@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const util = require('util');
-console.log('util', util.promisify.toString());
+// console.log('util', util.promisify.toString());
 
 const redis = require('redis');
 const redisURL = 'redis://localhost:6379';

@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const redis = require('redis');
 const util = require('util');
+console.log('util', util.promisify.toString());
 
+const redis = require('redis');
 const redisURL = 'redis://localhost:6379';
 const client = redis.createClient(redisURL);
 client.on('connect', () => {
@@ -15,6 +16,8 @@ mongoose.Query.prototype.exec = async function () {
   const cacheValue = await client.get(key);
 
   if (cacheValue) {
+    console.log('Got it from cache!');
+
     const doc = JSON.parse(cacheValue);
     return Array.isArray(doc)
       ? doc.map(d => new this.model(d))

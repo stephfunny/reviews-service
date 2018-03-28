@@ -150,7 +150,7 @@ export default class Reviews extends React.Component {
     if (id === null) {
       return;
     }
-    axios.get('/restaurants/' + id + '/reviews')
+    axios.get('/api/restaurants/' + id + '/reviews')
     .then((response) => {
       // console.log(response.data.reviews);
       this.setState({

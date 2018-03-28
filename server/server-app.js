@@ -23,7 +23,7 @@ app.get('/:id', sendIndex);
 
 app.use('/reviews/content', express.static(path.join(__dirname, '..','client','public')));
 
-app.use('/restaurants/:id/reviews', async (req, res) => {
+app.use('/api/restaurants/:id/reviews', async (req, res) => {
   let validId = await db.isValidReviewId(req.params.id, false);
   if (!validId) {
     console.log('Request for invalid id');

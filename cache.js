@@ -12,7 +12,7 @@ client.get = util.promisify(client.get);
 const exec = mongoose.Query.prototype.exec;
 
 mongoose.Query.prototype.exec = async function () {
-  console.log('mongoose exec');
+  // console.log('mongoose exec');
   const key = JSON.stringify(Object.assign({}, this.getQuery(), {collection: this.mongooseCollection.name}));
   const cacheValue = await client.get(key);
 

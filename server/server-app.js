@@ -3,9 +3,7 @@ const express = require('express');
 // const bodyParser = require('body-parser');
 // const morgan = require('morgan');
 const path = require('path');
-// const db = require('../db/index.js');
 const db = require('../db/zagat/index.js');
-// const db = require('../db/sql/model.js');
 require('../cache.js');
 
 db.connect().catch((err) => {

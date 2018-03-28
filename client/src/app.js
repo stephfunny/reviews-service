@@ -4,7 +4,7 @@ import React from 'react';
 
 ReactDOM.render(
   React.createElement(Reviews),
-  document.getElementById('itemreviews')
+  document.getElementById('reviews-app')
 );
 
 // window.ReactDOM = ReactDOM;

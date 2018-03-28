@@ -35,3 +35,6 @@ db/bigData/
 db/mongo-model.js
 artilleryIds.csv
 db/reviews-one-test.csv
+db/generatedReviewData10mTakeTwo.json
+db/generatedReviewData10mTakeTwo.json.zip
+db/old/	

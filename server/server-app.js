@@ -10,11 +10,11 @@ db.connect().catch((err) => {
   console.log(err);
 });
 
-// const cors = require('cors');
+const cors = require('cors');
 
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 const sendIndex = (req, res) => (res.sendFile(path.join(__dirname, '..', 'client', 'public', 'index.html')));
 
 app.get('/', sendIndex);

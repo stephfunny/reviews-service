@@ -173,7 +173,7 @@ export default class Reviews extends React.Component {
   }
 
   getIdFromUrl() {
-    let id = window.location.pathname.split('/')[1];
+    let id = window.location.pathname.split('/')[2];
     // console.log('getIdFromUrl in app returned id as: ', id);
     return id !== '' ? id : '1';
   }

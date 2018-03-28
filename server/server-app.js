@@ -18,7 +18,7 @@ const app = express();
 const sendIndex = (req, res) => (res.sendFile(path.join(__dirname, '..', 'client', 'public', 'index.html')));
 
 app.get('/', sendIndex);
-app.get('/:id', sendIndex);
+app.get('/restaurants/:id', sendIndex);
 
 
 app.use('/reviews/content', express.static(path.join(__dirname, '..','client','public')));

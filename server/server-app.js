@@ -4,18 +4,20 @@ const express = require('express');
 // const morgan = require('morgan');
 const path = require('path');
 const db = require('../db/zagat/index.js');
-require('../cache.js');
+// require('../cache.js');
 
 db.connect().catch((err) => {
   console.log(err);
 });
 
-const cors = require('cors');
+// const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
+// const sendIndex = (req, res) => (res.sendFile(path.join(__dirname, '..', 'client', 'public', 'index.html')));
 const sendIndex = (req, res) => (res.sendFile(path.join(__dirname, '..', 'client', 'public', 'index.html')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/', sendIndex);
 app.get('/restaurants/:id', sendIndex);

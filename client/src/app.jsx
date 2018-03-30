@@ -17,97 +17,7 @@ export default class Reviews extends React.Component {
       pagesize: 10,
       currentPage: 0,
       reviews: [
-      // {
-      //   review_index: 0,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome! super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain. super super awesome and it takes a million words to explain.  '
-      // },
-      // {
-      //   review_index: 1,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome!'
-      // },
-      // {
-      //   review_index: 3,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome!'
-      // },
-      // {
-      //   review_index: 4,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome!'
-      // },
-      // {
-      //   review_index: 5,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome!'
-      // },
-      // {
-      //   review_index: 6,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome!'
-      // },
-      // {
-      //   review_index: 7,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome!'
-      // },
-      // {
-      //   review_index: 8,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome!'
-      // },
-      // {
-      //   review_index: 9,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome!'
-      // },
-      // {
-      //   review_index: 10,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome!'
-      // },
-      // {
-      //   review_index: 11,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome!'
-      // },
-      // {
-      //   review_index: 12,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome!'
-      // },
-      // {
-      //   review_index: 13,
-      //   author_name:'jill',
-      //   profile_photo_url: 'https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-teacher-312a499a08079a12-512x512.png',
-      //   time:'Feb 2013',
-      //   text:'it was awesome!'
-      // }
+ 
       ],
       filterTerms: null,
       overallRating: 4,
@@ -135,13 +45,10 @@ export default class Reviews extends React.Component {
         name: 'Parking',
         rating: 3
       }
-
       ] //will store variable types and render dynamically
     };
-
     this.changePage = this.changePage.bind(this);
     this.searchReviews = this.searchReviews.bind(this);
-
   }
 
   updateItem(id) {
@@ -172,11 +79,11 @@ export default class Reviews extends React.Component {
     return this.filterReviews().length > this.state.pagesize;
   }
 
-  getIdFromUrl() {
-    let id = window.location.pathname.split('/')[2];
-    // console.log('getIdFromUrl in app returned id as: ', id);
-    return id !== '' ? id : '1';
-  }
+  // getIdFromUrl() {
+  //   let id = window.location.pathname.split('/')[2];
+  //   // console.log('getIdFromUrl in app returned id as: ', id);
+  //   return id !== '' ? id : '1';
+  // }
 
   filterReviews() {
     //TODO: will filter reviews by search terms
@@ -208,10 +115,21 @@ export default class Reviews extends React.Component {
   onFlagReview(flagInfo) {
     //TODO: //post flagInfo to an endpoint
   }
-
   componentWillMount() {
+    console.log("will mount");
+    // console.log(window.location);
+
+  }
+
+  componentDidMount() {
     //fetch item data
-    this.updateItem(this.getIdFromUrl());
+    console.log('component did mount!');
+    console.log(window.location.pathname.split('/')[2]);
+    let id = window.location.pathname.split('/')[2];
+    let id2 = id !== '' ? id : '1';
+    // let id2 = '1';
+    this.updateItem(id2);
+
 
   }
 

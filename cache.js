@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const util = require('util');
 // console.log('util', Object.keys(util).toString());
 
-const redis = require('redis');
+// const redis = require('redis');
 const redisURL = 'redis://localhost:6379';
 const client = redis.createClient(redisURL);
 client.on('connect', () => {
